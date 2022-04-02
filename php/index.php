@@ -6,11 +6,17 @@
 
 declare(strict_types=1);
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
 use App\Services\Handler\StringWithPatternHandle;
 use App\Services\StringFilter\CleanStringFilter;
 use App\Services\Storage\PatternStore;
 use App\Services\Validator\PatternValidator;
 
+/**
+ * @param string $value
+ * @param string $pattern
+ */
 function someControllerCode(string $value, string $pattern)
 {
     $filter = new CleanStringFilter($value);
@@ -21,8 +27,8 @@ function someControllerCode(string $value, string $pattern)
     $result = $handle->handle();
     
     if ($result) {
-        echo 'Result is: ' . $result;
-    } else echo 'Something went wrong...';
+        echo 'Result is: ' . $result . PHP_EOL;
+    } else echo 'Something went wrong...' . PHP_EOL;
 }
 
 $strCorrect = 'String with ( nested (brackets) for () example [])';
