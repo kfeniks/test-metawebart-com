@@ -7,13 +7,13 @@
 declare(strict_types=1);
 
 use App\Services\Handler\StringWithPatternHandle;
-use \App\Services\StringFilter\StringFilterWithPattern;
-use \App\Services\Storage\PatternStore;
-use \App\Services\Validator\PatternValidator;
+use App\Services\StringFilter\CleanStringFilter;
+use App\Services\Storage\PatternStore;
+use App\Services\Validator\PatternValidator;
 
 function someControllerCode(string $value, string $pattern)
 {
-    $filter = new StringFilterWithPattern($value);
+    $filter = new CleanStringFilter($value);
     $availablePatterns = new PatternStore($pattern);
     $validator = new PatternValidator($availablePatterns);
     

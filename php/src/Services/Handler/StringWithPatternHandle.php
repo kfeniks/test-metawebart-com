@@ -6,7 +6,7 @@ namespace App\Services\Handler;
 
 use App\Helpers\String\InvalidCharacters;
 use App\Services\Storage\PatternsInUsage;
-use App\Services\StringFilter\StringFilterWithPattern;
+use App\Services\StringFilter\CleanStringFilter;
 use App\Services\StringTransformer\RevertElement;
 use App\Services\Validator\PatternValidator;
 
@@ -28,11 +28,11 @@ class StringWithPatternHandle extends BaseHandle
     private RevertElement $serviceTrans;
     
     /**
-     * @param StringFilterWithPattern $filter
+     * @param CleanStringFilter $filter
      * @param PatternValidator $validator
      */
     public function __construct(
-        private StringFilterWithPattern $filter,
+        private CleanStringFilter $filter,
         private PatternValidator $validator,
         
     ) {

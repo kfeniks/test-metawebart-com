@@ -7,12 +7,12 @@ namespace App\Services\StringFilter;
 use App\Helpers\String\RegularCharacters;
 
 /**
- * Class StringFilterPatternService
+ * Class CleanStringFilter
  * @version 1.0.0
  * @access public
  * @package App\Services\StringFilter
  */
-class StringFilterWithPattern
+class CleanStringFilter
 {
     /**
      * @var string
