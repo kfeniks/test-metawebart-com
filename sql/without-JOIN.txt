@@ -1,0 +1,29 @@
+CREATE TABLE test (
+   id INTEGER not null,
+   name TEXT
+ );
+
+ INSERT INTO test (id, name)
+  values (1, 'James');
+
+ INSERT INTO test (id, name)
+  values (2, 'William');
+
+ INSERT INTO test (id, name)
+  VALUES (2, 'William');
+
+ INSERT INTO test (id, name)
+  VALUES (4, 'Michael');
+
+ INSERT INTO test (id, name)
+  VALUES (4, 'Michael');
+
+============== Version: 1
+select id
+ from test
+ Group BY id
+ HAVING COUNT(*)>1
+ ORDER BY id ASC;
+
+============== Version: 2
+
